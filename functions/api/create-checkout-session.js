@@ -25,6 +25,9 @@ export async function onRequestPost(context) {
     params.append('mode', 'payment');
     params.append('locale', 'auto');
     params.append('submit_type', 'pay');
+    // Explicitly allow card payments. Stripe wallets such as Apple Pay and Google Pay
+    // are presented through the card payment method when they are enabled and eligible.
+    params.append('payment_method_types[0]', 'card');
     params.append('success_url', `${siteUrl}/checkout.html?payment=success&session_id={CHECKOUT_SESSION_ID}`);
     params.append('cancel_url', `${siteUrl}/index.html?payment=cancelled`);
     params.append('phone_number_collection[enabled]', 'true');

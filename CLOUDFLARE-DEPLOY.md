@@ -47,3 +47,7 @@ Cancelled payments return to:
 - Apple Pay can appear automatically when Stripe allows it for the account and the customer is using a supported Apple device/browser with Apple Pay configured.
 - The checkout no longer forces a separate billing-address collection step; shipping details remain collected by Stripe.
 - On unsupported devices (for example, many Windows browsers), Apple Pay will not be shown and Card remains available.
+
+
+## Payment methods
+The Checkout Function explicitly sends `payment_method_types[0]=card`. This keeps standard card checkout available and allows eligible wallets such as Apple Pay/Google Pay to surface through Stripe Checkout when enabled in your Stripe Dashboard and supported by the customer's device/browser.
