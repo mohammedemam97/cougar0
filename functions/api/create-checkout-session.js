@@ -31,7 +31,6 @@ export async function onRequestPost(context) {
     ALLOWED_COUNTRIES.forEach((country, index) => {
       params.append(`shipping_address_collection[allowed_countries][${index}]`, country);
     });
-    params.append('automatic_payment_methods[enabled]', 'true');
     if (email) params.append('customer_email', email);
 
     let lineIndex = 0;
