@@ -177,7 +177,7 @@ window.startStripeCheckout = async function startStripeCheckout(event) {
     const healthResponse = await fetch('/api/health', { cache: 'no-store' });
     const health = await healthResponse.json().catch(() => ({}));
     if (!healthResponse.ok || !health.ok) throw new Error('Checkout server is not available.');
-    if (!health.stripeConfigured) throw new Error('Stripe is not configured on the server. Restart with START-WEBSITE.bat and enter your Stripe secret key.');
+    if (!health.stripeConfigured) throw new Error('Stripe is not configured in Cloudflare. Add STRIPE_SECRET_KEY under Variables and Secrets, then redeploy.');
 
     const response = await fetch('/api/create-checkout-session', {
       method: 'POST',

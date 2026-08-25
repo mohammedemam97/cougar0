@@ -76,16 +76,16 @@ function initCheckoutForm() {
 
     try {
       if (window.location.protocol === 'file:') {
-        throw new Error('Open the store with START-WEBSITE.bat, not by double-clicking the HTML file.');
+        throw new Error('Open the live Cloudflare website instead of a local file.');
       }
 
       const healthResponse = await fetch('/api/health', { cache: 'no-store' });
       if (!healthResponse.ok) {
-        throw new Error('The COUGAR checkout server is not running on this address. Start the website with START-WEBSITE.bat.');
+        throw new Error('The Cloudflare checkout function is not available on this deployment.');
       }
       const health = await healthResponse.json();
       if (!health.stripeConfigured) {
-        throw new Error('Stripe is not configured on the local server. Restart with START-WEBSITE.bat and enter your Stripe secret key.');
+        throw new Error('Stripe is not configured in Cloudflare. Add STRIPE_SECRET_KEY under Variables and Secrets, then redeploy.');
       }
 
       const response = await fetch('/api/create-checkout-session', {
@@ -104,7 +104,7 @@ function initCheckoutForm() {
       window.location.assign(result.url);
     } catch (error) {
       const message = (error && error.message === 'Failed to fetch')
-        ? 'Checkout server is unreachable. Close other localhost servers and start this project using START-WEBSITE.bat.'
+        ? 'Checkout could not reach the Cloudflare Function. Check the latest Pages deployment and the STRIPE_SECRET_KEY secret.'
         : (error.message || 'Stripe Checkout could not be started.');
       window.showToast(message, 'error');
       submitBtn.disabled = false;
