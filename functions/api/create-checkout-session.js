@@ -23,14 +23,15 @@ export async function onRequestPost(context) {
 
     const params = new URLSearchParams();
     params.append('mode', 'payment');
+    params.append('locale', 'auto');
+    params.append('submit_type', 'pay');
     params.append('success_url', `${siteUrl}/checkout.html?payment=success&session_id={CHECKOUT_SESSION_ID}`);
     params.append('cancel_url', `${siteUrl}/index.html?payment=cancelled`);
-    params.append('billing_address_collection', 'required');
     params.append('phone_number_collection[enabled]', 'true');
     ALLOWED_COUNTRIES.forEach((country, index) => {
       params.append(`shipping_address_collection[allowed_countries][${index}]`, country);
     });
-    params.append('payment_method_types[0]', 'card');
+    params.append('automatic_payment_methods[enabled]', 'true');
     if (email) params.append('customer_email', email);
 
     let lineIndex = 0;

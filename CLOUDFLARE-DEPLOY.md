@@ -41,3 +41,9 @@ Successful payments return to:
 Cancelled payments return to:
 
 `https://cougar0.pages.dev/index.html?payment=cancelled`
+
+## Apple Pay / simpler Stripe Checkout
+- Checkout uses Stripe dynamic/automatic payment methods.
+- Apple Pay can appear automatically when Stripe allows it for the account and the customer is using a supported Apple device/browser with Apple Pay configured.
+- The checkout no longer forces a separate billing-address collection step; shipping details remain collected by Stripe.
+- On unsupported devices (for example, many Windows browsers), Apple Pay will not be shown and Card remains available.
