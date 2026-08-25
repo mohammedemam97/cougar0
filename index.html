@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COUGAR — Flagship HP & Dell Laptops</title>
+  <meta name="description" content="Welcome to COUGAR: Premium HP Spectre, Omen, Dell XPS & Alienware laptops with certified warranty and express delivery." />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Custom Modern Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==================== FLOATING VERTICAL SOCIAL SIDEBAR (RIGHT EDGE) ==================== -->
+  <aside class="floating-social-sidebar">
+    <a href="#" class="floating-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="floating-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="floating-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="#" class="floating-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+  </aside>
+
+  <!-- ==================== TOP NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Left: Logo with Icon -->
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-square"><img src="assets/images/cougar-logo-source.png" alt="COUGAR logo" /></span>
+        <span>COUGAR</span>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="products.html?brand=HP" class="nav-link">HP Laptops</a></li>
+        <li><a href="products.html?brand=Dell" class="nav-link">Dell Laptops</a></li>
+        
+        
+      </ul>
+
+      <!-- Right: Cart & Order Now Pill Button -->
+      <div class="nav-actions">
+        <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <a href="checkout.html" class="nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Order Now</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION (RETAINED, BADGE REMOVED) ==================== -->
+  <header class="hero-reference-style">
+    <!-- Cinematic Dark Hardware Background Image -->
+    <picture class="hero-reference-picture" aria-hidden="true">
+      <source media="(max-width: 767px)" srcset="assets/images/mobile-hero.jpg" />
+      <img
+        src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1600&q=85"
+        alt="COUGAR Premium Laptops"
+        class="hero-reference-bg"
+        loading="eager"
+      />
+    </picture>
+    
+    <!-- Dark Vignette Overlay -->
+    <div class="hero-reference-overlay"></div>
+
+    <!-- Centered Content -->
+    <div class="hero-reference-content">
+      <!-- Main Headline -->
+      <h1 class="hero-reference-title">
+        Welcome to <span class="title-accent">COUGAR</span>
+      </h1>
+
+      <!-- Sub-headline -->
+      <div class="hero-reference-subtitle">
+        Flagship Laptops Every Day
+      </div>
+
+      <!-- Centered Paragraph -->
+      <p class="hero-reference-desc">
+        Enjoy premium HP Spectre, Omen, Dell XPS, and Alienware laptops with certified factory warranty, 24/7 expert support, and fast express delivery. Built for power users and creators.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-reference-actions">
+        <a href="products.html" class="btn-ref-primary">
+          <i class="fa-solid fa-laptop"></i>
+          <span>Explore Laptops</span>
+        </a>
+        <a href="#why-section" class="btn-ref-secondary">
+          <i class="fa-solid fa-circle-play"></i>
+          <span>Our Story</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Animated Mouse Scroll Indicator -->
+    <div class="hero-scroll-indicator" onclick="document.getElementById('featured-section').scrollIntoView({behavior: 'smooth'})">
+      <span>SCROLL DOWN</span>
+      <div class="mouse-pill-icon">
+        <div class="mouse-dot"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== FULL-WIDTH VIDEO SECTION ==================== -->
+  <section class="home-video-section" aria-label="COUGAR laptop video">
+    <video
+      class="home-video-frame"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-label="COUGAR laptop showcase video"
+    >
+      <source src="assets/video/cougar-mobile-showcase.mp4" type="video/mp4" media="(max-width: 768px)" />
+      <source src="assets/video/cougar-showcase.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- ==================== SECTION 2: FEATURED HP & DELL LAPTOPS ==================== -->
+  <section class="section" id="featured-section">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Handpicked Selection</span>
+        <h2 class="section-title">Featured HP & Dell Laptops</h2>
+        <p class="section-subtitle">Our top 6 flagship models engineered for gaming, executive business, and creative mastery.</p>
+      </div>
+
+      <!-- Products Grid dynamically rendered with both HP & Dell top flagships -->
+      <div class="products-grid" id="featured-products-container">
+        <!-- Rendered instantly with real photos by JavaScript -->
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;" class="reveal-on-scroll">
+        <a href="products.html" class="btn btn-glass" style="padding: 14px 38px; font-size: 1rem;">
+          <span>Explore All 32 Models in Catalog</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: BRANDS SHOWCASE ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i class="fa-solid fa-award"></i> The Two Giants</span>
+        <h2 class="section-title">Shop by Brand</h2>
+        <p class="section-subtitle">Select between revolutionary HP engineering or iconic Dell precision.</p>
+      </div>
+
+      <div class="brands-grid">
+        <!-- HP Showcase Card -->
+        <div class="brand-showcase-card hp-brand fade-left">
+          <div>
+            <div class="brand-card-header">
+              <div class="brand-logo-text hp">hp</div>
+              <span class="brand-laptop-count">16 Models In Stock</span>
+            </div>
+            <p class="brand-card-desc">
+              From the luxurious 2-in-1 Spectre series to tournament-ready Omen gaming rigs and military-tested EliteBook enterprise machines.
+            </p>
+            <ul class="brand-features-list">
+              <li><i class="fa-solid fa-check"></i> HP Wolf Pro Security & Privacy Screens</li>
+              <li><i class="fa-solid fa-check"></i> Bang & Olufsen high-fidelity acoustic audio</li>
+              <li><i class="fa-solid fa-check"></i> Fast Charge technology (50% in 30 minutes)</li>
+            </ul>
+          </div>
+          <a href="products.html?brand=HP" class="btn btn-primary btn-block">
+            <span>Explore HP Collection</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Dell Showcase Card -->
+        <div class="brand-showcase-card dell-brand fade-right">
+          <div>
+            <div class="brand-card-header">
+              <div class="brand-logo-text dell">DELL</div>
+              <span class="brand-laptop-count">16 Models In Stock</span>
+            </div>
+            <p class="brand-card-desc">
+              Pinnacle of modern craft with InfinityEdge XPS displays, revolutionary Alienware Cryo-Tech cooling, and ultra-durable Latitude laptops.
+            </p>
+            <ul class="brand-features-list">
+              <li><i class="fa-solid fa-check"></i> 4K+ OLED InfinityEdge borderless screens</li>
+              <li><i class="fa-solid fa-check"></i> AlienFX RGB & High-TGP graphics performance</li>
+              <li><i class="fa-solid fa-check"></i> Dell Optimizer AI background optimization</li>
+            </ul>
+          </div>
+          <a href="products.html?brand=Dell" class="btn btn-primary btn-block">
+            <span>Explore Dell Collection</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: WHY CHOOSE US / OUR STORY ==================== -->
+  <section class="section" id="why-section">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i class="fa-solid fa-shield-check"></i> The COUGAR Promise</span>
+        <h2 class="section-title">Why Choose COUGAR?</h2>
+        <p class="section-subtitle">Unmatched buyer protections, certified hardware, and continuous support.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal-on-scroll delay-1">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 class="feature-title">Free Express Shipping</h3>
+          <p class="feature-desc">All laptop orders over $500 include free 2-day insured courier delivery with live tracking.</p>
+        </div>
+
+        <div class="feature-card reveal-on-scroll delay-2">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="feature-title">2-Year Full Warranty</h3>
+          <p class="feature-desc">Every HP and Dell device is backed with a comprehensive 2-year warranty covering parts & labor.</p>
+        </div>
+
+        <div class="feature-card reveal-on-scroll delay-3">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 class="feature-title">24/7 Tech Concierge</h3>
+          <p class="feature-desc">Our certified laptop specialists are available 24/7 via live chat or phone for hardware & software assistance.</p>
+        </div>
+
+        <div class="feature-card reveal-on-scroll delay-4">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+          </div>
+          <h3 class="feature-title">30-Day Easy Returns</h3>
+          <p class="feature-desc">Not completely satisfied with your new machine? Return it within 30 days for a 100% full refund.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 16px;">
+            <span class="nav-logo-square"><img src="assets/images/cougar-logo-source.png" alt="COUGAR logo" /></span>
+            <span>COUGAR</span>
+          </div>
+          <p>The premier authorized digital destination for high-performance HP & Dell laptops. Engineered for greatness.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Laptops (32)</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="checkout.html">Stripe Checkout</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Brands</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?brand=HP">HP Spectre & Envy</a></li>
+            <li><a href="products.html?brand=HP&category=Gaming">HP Omen Series</a></li>
+            <li><a href="products.html?brand=Dell">Dell XPS & Studio</a></li>
+            <li><a href="products.html?brand=Dell&category=Gaming">Dell Alienware Series</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Security & Support</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fa-solid fa-lock"></i> Stripe 256-Bit TLS</a></li>
+            <li><a href="#"><i class="fa-solid fa-headset"></i> 24/7 Tech Support</a></li>
+            <li><a href="#"><i class="fa-solid fa-shield"></i> 2-Year Warranty</a></li>
+            <li><a href="#"><i class="fa-solid fa-file-contract"></i> Terms & Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2024 COUGAR Inc. All rights reserved. Exclusively HP & Dell Laptops.</div>
+        <div style="display: flex; gap: 16px; align-items: center;">
+          <i class="fa-brands fa-stripe" style="font-size: 1.8rem; color: var(--accent-hero-glow);"></i>
+          <i class="fa-brands fa-cc-visa" style="font-size: 1.4rem; color: #94a3b8;"></i>
+          <i class="fa-brands fa-cc-mastercard" style="font-size: 1.4rem; color: #94a3b8;"></i>
+          <i class="fa-brands fa-apple-pay" style="font-size: 1.4rem; color: #94a3b8;"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Render 6 Featured HP & Dell Flagships on Home Page
+    function renderFeaturedLaptops() {
+      const container = document.getElementById('featured-products-container');
+      if (!container || !window.PRODUCTS) return;
+
+      const hpFeatured = window.PRODUCTS.filter(p => p.brand === 'HP').slice(0, 3);
+      const dellFeatured = window.PRODUCTS.filter(p => p.brand === 'Dell').slice(0, 3);
+      const featuredList = [
+        hpFeatured[0], dellFeatured[0],
+        hpFeatured[1], dellFeatured[1],
+        hpFeatured[2], dellFeatured[2]
+      ].filter(Boolean);
+
+      container.innerHTML = featuredList.map((laptop, index) => `
+        <div class="product-card reveal-on-scroll delay-${(index % 3) + 1}">
+          <div class="card-img-area">
+            ${laptop.badge ? `<span class="card-badge ${laptop.badge.toLowerCase().replace(/\s+/g, '-')}">${laptop.badge}</span>` : ''}
+            <span class="card-brand-chip">${laptop.brand}</span>
+            <a href="product.html?id=${laptop.id}" style="width: 100%; height: 100%; display: block;">
+              <img src="${laptop.image}" alt="${laptop.name}" loading="lazy" />
+            </a>
+          </div>
+          <div class="card-content">
+            <div class="card-category">${laptop.category} Series</div>
+            <a href="product.html?id=${laptop.id}">
+              <h3 class="card-title">${laptop.name}</h3>
+            </a>
+            <div class="card-specs-preview">
+              <span class="spec-pill"><i class="fa-solid fa-microchip"></i> ${laptop.specs.processor.split('(')[0]}</span>
+              <span class="spec-pill"><i class="fa-solid fa-memory"></i> ${laptop.specs.ram.split(' ')[0]}</span>
+            </div>
+            <div class="card-rating">
+              ${window.renderStars(laptop.rating)}
+              <span class="review-count">(${laptop.reviews} reviews)</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-group">
+                <span class="card-price">${window.formatCurrency(laptop.price)}</span>
+                <span class="card-original-price">${window.formatCurrency(laptop.originalPrice)}</span>
+              </div>
+              <button class="card-btn-add" onclick="window.Cart.addItem(window.PRODUCTS.find(p=>p.id===${laptop.id}))">
+                <i class="fa-solid fa-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      if (window.initScrollAnimations) {
+        window.initScrollAnimations();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderFeaturedLaptops);
+    } else {
+      renderFeaturedLaptops();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All HP & Dell Laptops — COUGAR</title>
+  <meta name="description" content="Browse the complete catalog of 32 HP & Dell laptops at COUGAR. Filter by brand, series, processor, and price range." />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Reference Matched Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Floating Social Sidebar -->
+  <aside class="floating-social-sidebar">
+    <a href="#" class="floating-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="floating-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="floating-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="#" class="floating-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+  </aside>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-square"><img src="assets/images/cougar-logo-source.png" alt="COUGAR logo" /></span>
+        <span>COUGAR</span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link active">Products</a></li>
+        <li><a href="products.html?brand=HP" class="nav-link">HP Laptops</a></li>
+        <li><a href="products.html?brand=Dell" class="nav-link">Dell Laptops</a></li>
+        
+        
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <a href="checkout.html" class="nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Order Now</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Page Header Banner -->
+    <div class="page-header-banner zoom-in">
+      <div class="container page-header-content">
+        <div class="breadcrumb">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Products</span>
+        </div>
+        <h1 class="page-header-title">HP & Dell Laptops Catalog</h1>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">Explore all 32 flagship models with real high-resolution imagery and certified hardware specs.</p>
+      </div>
+    </div>
+
+    <!-- Compact one-row mobile filters -->
+    <div class="mobile-filter-strip" aria-label="Quick product filters">
+      <div class="mobile-filter-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="mobile-search-input" type="search" placeholder="Search laptops" aria-label="Search laptops" />
+      </div>
+      <select id="mobile-brand-select" aria-label="Brand">
+        <option value="All">Brand</option>
+        <option value="HP">HP</option>
+        <option value="Dell">Dell</option>
+      </select>
+      <select id="mobile-category-select" aria-label="Category">
+        <option value="All">Category</option>
+        <option value="Premium">Premium</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Business">Biz</option>
+        <option value="Creator">Creator</option>
+        <option value="Student">Student</option>
+      </select>
+      <select id="mobile-price-select" aria-label="Price range">
+        <option value="all">Price</option>
+        <option value="under-600">&lt; AED 600</option>
+        <option value="600-1199">AED 600–1.2k</option>
+        <option value="1200-1999">AED 1.2–2k</option>
+        <option value="2000-plus">AED 2k+</option>
+      </select>
+      <select id="mobile-sort-select" aria-label="Sort products">
+        <option value="featured">Sort</option>
+        <option value="price-asc">Price ↑</option>
+        <option value="price-desc">Price ↓</option>
+        <option value="rating">Rating</option>
+        <option value="name">A–Z</option>
+      </select>
+      <button id="mobile-reset-filters" type="button" aria-label="Reset filters"><i class="fa-solid fa-rotate-right"></i></button>
+    </div>
+
+    <!-- Catalog Main Layout: Sidebar + Products Grid -->
+    <div class="catalog-layout">
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar fade-left">
+        <!-- Search -->
+        <div class="filter-group">
+          <div class="filter-title">
+            <span><i class="fa-solid fa-magnifying-glass"></i> Search</span>
+          </div>
+          <input type="text" id="search-input" class="search-box-input" placeholder="Search Spectre, XPS, OLED, RTX..." />
+        </div>
+
+        <!-- Brand Filter -->
+        <div class="filter-group">
+          <div class="filter-title">
+            <span><i class="fa-solid fa-tag"></i> Brand</span>
+          </div>
+          <div class="filter-options-list">
+            <label class="filter-option-label">
+              <input type="radio" name="brand-filter" value="All" checked />
+              <span>All Brands (32)</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="radio" name="brand-filter" value="HP" />
+              <span>HP Only (16)</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="radio" name="brand-filter" value="Dell" />
+              <span>Dell Only (16)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <div class="filter-title">
+            <span><i class="fa-solid fa-layer-group"></i> Category</span>
+          </div>
+          <div class="filter-options-list">
+            <label class="filter-option-label">
+              <input type="checkbox" class="category-checkbox" value="All" checked />
+              <span>All Categories</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="checkbox" class="category-checkbox" value="Premium" />
+              <span>Premium & Flagship</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="checkbox" class="category-checkbox" value="Gaming" />
+              <span>High-Performance Gaming</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="checkbox" class="category-checkbox" value="Business" />
+              <span>Business & Enterprise</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="checkbox" class="category-checkbox" value="Creator" />
+              <span>Creator & Workstation</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="checkbox" class="category-checkbox" value="Student" />
+              <span>Everyday & Student</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="filter-group">
+          <div class="filter-title">
+            <span><i class="fa-solid fa-coins"></i> Price Range</span>
+          </div>
+          <div class="filter-options-list">
+            <label class="filter-option-label">
+              <input type="radio" name="price-filter" value="all" checked />
+              <span>Any Price</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="radio" name="price-filter" value="under-600" />
+              <span>Under AED 600</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="radio" name="price-filter" value="600-1199" />
+              <span>AED 600 &ndash; AED 1,199</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="radio" name="price-filter" value="1200-1999" />
+              <span>AED 1,200 &ndash; AED 1,999</span>
+            </label>
+            <label class="filter-option-label">
+              <input type="radio" name="price-filter" value="2000-plus" />
+              <span>AED 2,000 &amp; Above</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Reset Button -->
+        <button id="reset-filters-btn" class="btn btn-glass btn-block btn-sm" style="margin-top: 12px;">
+          <i class="fa-solid fa-rotate-right"></i> Reset All Filters
+        </button>
+      </aside>
+
+      <!-- Main Products Content Area -->
+      <section class="products-catalog-section">
+        <!-- Top Toolbar -->
+        <div class="catalog-top-bar">
+          <div id="product-count-label" style="font-weight: 600; color: var(--text-secondary);">
+            Showing <span id="displayed-count" style="color: var(--accent-gold); font-weight: 800;">32</span> of 32 laptops
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <label for="sort-select" style="font-size: 0.88rem; font-weight: 600; color: var(--text-secondary);">Sort By:</label>
+            <select id="sort-select" class="sort-select">
+              <option value="featured">Featured & Recommended</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Customer Rating</option>
+              <option value="name">Name (A &ndash; Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="catalog-products-grid">
+          <!-- Rendered dynamically by JS with real product images -->
+        </div>
+
+        <!-- Empty Filter Results Message -->
+        <div id="no-products-found" class="empty-state" style="display: none;">
+          <i class="fa-solid fa-laptop-slash"></i>
+          <h3>No Laptops Match Your Filters</h3>
+          <p style="color: var(--text-muted); margin: 8px 0 20px 0;">Try adjusting your search terms or resetting filters.</p>
+          <button class="btn btn-primary" onclick="resetFilters()">Clear Filters</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 16px;">
+            <span class="nav-logo-square"><img src="assets/images/cougar-logo-source.png" alt="COUGAR logo" /></span>
+            <span>COUGAR</span>
+          </div>
+          <p>The premier authorized digital destination for high-performance HP & Dell laptops. Engineered for greatness.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Laptops (32)</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Brands</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?brand=HP">HP Laptops (16)</a></li>
+            <li><a href="products.html?brand=Dell">Dell Laptops (16)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Security</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fa-solid fa-lock"></i> Stripe Ready</a></li>
+            <li><a href="#"><i class="fa-solid fa-shield"></i> 2-Year Warranty</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2024 COUGAR Inc. All rights reserved.</div>
+        <div>HP & Dell Authorized Outlet</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let activeBrand = 'All';
+    let activeCategories = ['All'];
+    let activePriceRange = 'all';
+    let searchQuery = '';
+    let activeSort = 'featured';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      parseUrlParameters();
+      setupFilterListeners();
+      renderCatalog();
+    });
+
+    function parseUrlParameters() {
+      const params = new URLSearchParams(window.location.search);
+      const brandParam = params.get('brand');
+      const catParam = params.get('category');
+
+      if (brandParam && ['HP', 'Dell'].includes(brandParam)) {
+        activeBrand = brandParam;
+        const brandRadio = document.querySelector(`input[name="brand-filter"][value="${brandParam}"]`);
+        if (brandRadio) brandRadio.checked = true;
+      }
+
+      if (catParam) {
+        activeCategories = [catParam];
+        document.querySelectorAll('.category-checkbox').forEach(cb => {
+          cb.checked = cb.value === catParam;
+        });
+      }
+
+      const mobileBrand = document.getElementById('mobile-brand-select');
+      const mobileCategory = document.getElementById('mobile-category-select');
+      if (mobileBrand) mobileBrand.value = activeBrand;
+      if (mobileCategory) mobileCategory.value = activeCategories[0] || 'All';
+    }
+
+    function setupFilterListeners() {
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          renderCatalog();
+        });
+      }
+
+      document.querySelectorAll('input[name="brand-filter"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          activeBrand = e.target.value;
+          renderCatalog();
+        });
+      });
+
+      const catCheckboxes = document.querySelectorAll('.category-checkbox');
+      catCheckboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          if (e.target.value === 'All') {
+            if (e.target.checked) {
+              catCheckboxes.forEach(c => { if (c.value !== 'All') c.checked = false; });
+              activeCategories = ['All'];
+            }
+          } else {
+            const allBox = document.querySelector('.category-checkbox[value="All"]');
+            if (allBox) allBox.checked = false;
+
+            activeCategories = Array.from(catCheckboxes)
+              .filter(c => c.checked && c.value !== 'All')
+              .map(c => c.value);
+
+            if (activeCategories.length === 0) {
+              if (allBox) allBox.checked = true;
+              activeCategories = ['All'];
+            }
+          }
+          renderCatalog();
+        });
+      });
+
+      document.querySelectorAll('input[name="price-filter"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          activePriceRange = e.target.value;
+          renderCatalog();
+        });
+      });
+
+      const sortSelect = document.getElementById('sort-select');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+          activeSort = e.target.value;
+          renderCatalog();
+        });
+      }
+
+      const resetBtn = document.getElementById('reset-filters-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', resetFilters);
+      }
+
+      const mobileSearch = document.getElementById('mobile-search-input');
+      const mobileBrand = document.getElementById('mobile-brand-select');
+      const mobileCategory = document.getElementById('mobile-category-select');
+      const mobilePrice = document.getElementById('mobile-price-select');
+      const mobileSort = document.getElementById('mobile-sort-select');
+      const mobileReset = document.getElementById('mobile-reset-filters');
+
+      if (mobileSearch) mobileSearch.addEventListener('input', e => { searchQuery = e.target.value.trim().toLowerCase(); renderCatalog(); });
+      if (mobileBrand) mobileBrand.addEventListener('change', e => { activeBrand = e.target.value; renderCatalog(); });
+      if (mobileCategory) mobileCategory.addEventListener('change', e => { activeCategories = [e.target.value]; renderCatalog(); });
+      if (mobilePrice) mobilePrice.addEventListener('change', e => { activePriceRange = e.target.value; renderCatalog(); });
+      if (mobileSort) mobileSort.addEventListener('change', e => { activeSort = e.target.value; renderCatalog(); });
+      if (mobileReset) mobileReset.addEventListener('click', resetFilters);
+    }
+
+    function resetFilters() {
+      activeBrand = 'All';
+      activeCategories = ['All'];
+      activePriceRange = 'all';
+      searchQuery = '';
+      activeSort = 'featured';
+
+      document.getElementById('search-input').value = '';
+      document.querySelector('input[name="brand-filter"][value="All"]').checked = true;
+      document.querySelector('input[name="price-filter"][value="all"]').checked = true;
+      document.getElementById('sort-select').value = 'featured';
+
+      document.querySelectorAll('.category-checkbox').forEach(cb => {
+        cb.checked = cb.value === 'All';
+      });
+
+      const mobileSearch = document.getElementById('mobile-search-input');
+      const mobileBrand = document.getElementById('mobile-brand-select');
+      const mobileCategory = document.getElementById('mobile-category-select');
+      const mobilePrice = document.getElementById('mobile-price-select');
+      const mobileSort = document.getElementById('mobile-sort-select');
+      if (mobileSearch) mobileSearch.value = '';
+      if (mobileBrand) mobileBrand.value = 'All';
+      if (mobileCategory) mobileCategory.value = 'All';
+      if (mobilePrice) mobilePrice.value = 'all';
+      if (mobileSort) mobileSort.value = 'featured';
+
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      if (!window.PRODUCTS) return;
+
+      let filtered = window.PRODUCTS.filter(laptop => {
+        if (activeBrand !== 'All' && laptop.brand !== activeBrand) return false;
+        if (!activeCategories.includes('All') && !activeCategories.includes(laptop.category)) return false;
+
+        if (activePriceRange === 'under-600' && laptop.price >= 600) return false;
+        if (activePriceRange === '600-1199' && (laptop.price < 600 || laptop.price > 1199)) return false;
+        if (activePriceRange === '1200-1999' && (laptop.price < 1200 || laptop.price > 1999)) return false;
+        if (activePriceRange === '2000-plus' && laptop.price < 2000) return false;
+
+        if (searchQuery) {
+          const matchName = laptop.name.toLowerCase().includes(searchQuery);
+          const matchBrand = laptop.brand.toLowerCase().includes(searchQuery);
+          const matchCat = laptop.category.toLowerCase().includes(searchQuery);
+          const matchCpu = laptop.specs.processor.toLowerCase().includes(searchQuery);
+          const matchGpu = laptop.specs.gpu.toLowerCase().includes(searchQuery);
+          if (!matchName && !matchBrand && !matchCat && !matchCpu && !matchGpu) {
+            return false;
+          }
+        }
+
+        return true;
+      });
+
+      if (activeSort === 'price-asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (activeSort === 'price-desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (activeSort === 'rating') {
+        filtered.sort((a, b) => b.rating - a.rating);
+      } else if (activeSort === 'name') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else {
+        filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+      }
+
+      document.getElementById('displayed-count').textContent = filtered.length;
+
+      const grid = document.getElementById('catalog-products-grid');
+      const noProductsNotice = document.getElementById('no-products-found');
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        noProductsNotice.style.display = 'block';
+      } else {
+        grid.style.display = 'grid';
+        noProductsNotice.style.display = 'none';
+
+        grid.innerHTML = filtered.map((laptop, index) => `
+          <div class="product-card">
+            <div class="card-img-area">
+              ${laptop.badge ? `<span class="card-badge ${laptop.badge.toLowerCase().replace(/\s+/g, '-')}">${laptop.badge}</span>` : ''}
+              <span class="card-brand-chip">${laptop.brand}</span>
+              <a href="product.html?id=${laptop.id}" style="width: 100%; height: 100%; display: block;">
+                <img src="${laptop.image}" alt="${laptop.name}" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-content">
+              <div class="card-category">${laptop.category} &bull; ${laptop.brand}</div>
+              <a href="product.html?id=${laptop.id}">
+                <h3 class="card-title">${laptop.name}</h3>
+              </a>
+              <div class="card-specs-preview">
+                <span class="spec-pill"><i class="fa-solid fa-microchip"></i> ${laptop.specs.processor.split('(')[0]}</span>
+                <span class="spec-pill"><i class="fa-solid fa-memory"></i> ${laptop.specs.ram.split(' ')[0]}</span>
+              </div>
+              <div class="card-rating">
+                ${window.renderStars(laptop.rating)}
+                <span class="review-count">(${laptop.reviews} reviews)</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price-group">
+                  <span class="card-price">${window.formatCurrency(laptop.price)}</span>
+                  <span class="card-original-price">${window.formatCurrency(laptop.originalPrice)}</span>
+                </div>
+                <button class="card-btn-add" onclick="window.Cart.addItem(window.PRODUCTS.find(p=>p.id===${laptop.id}))">
+                  <i class="fa-solid fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        if (window.initScrollAnimations) {
+          window.initScrollAnimations();
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart — COUGAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="simple-commerce-page">
+  <nav class="navbar scrolled simple-commerce-navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><i class="fa-solid fa-laptop-code"></i><span>COUGAR</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="products.html?brand=HP" class="nav-link">HP Laptops</a></li>
+        <li><a href="products.html?brand=Dell" class="nav-link">Dell Laptops</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="cart.html" class="nav-cart-btn active" aria-label="Shopping Cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="simple-cart-shell">
+    <section class="simple-cart-panel">
+      <header class="simple-cart-header">
+        <div>
+          <span class="simple-kicker">COUGAR Store</span>
+          <h1><i class="fa-solid fa-bag-shopping"></i> Your Cart</h1>
+        </div>
+        <a class="simple-close-link" href="products.html" aria-label="Continue shopping"><i class="fa-solid fa-xmark"></i></a>
+      </header>
+
+      <div class="simple-cart-body">
+        <div class="simple-cart-toolbar">
+          <span><strong id="cart-item-count-text">0</strong> item(s)</span>
+          <button id="clear-cart-btn" class="simple-text-btn"><i class="fa-regular fa-trash-can"></i> Clear</button>
+        </div>
+        <div id="cart-items-list"></div>
+        <div id="empty-cart-state" class="simple-empty-cart" style="display:none;">
+          <div class="simple-empty-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+          <h2>Your cart is empty</h2>
+          <p>Add a laptop to your cart and it will appear here.</p>
+          <a href="products.html" class="simple-outline-btn">Explore Laptops</a>
+        </div>
+      </div>
+
+      <footer class="simple-cart-footer">
+        <div class="simple-total-line"><span>Total:</span><strong id="summary-total">$0</strong></div>
+        <div class="simple-summary-mini" aria-hidden="true">
+          <span>Subtotal <b id="summary-subtotal">$0</b></span>
+          <span>Shipping <b id="summary-shipping">$0</b></span>
+          <span>Tax <b id="summary-tax">$0</b></span>
+        </div>
+        <a href="checkout.html" id="proceed-checkout-btn" class="simple-checkout-btn"><i class="fa-regular fa-credit-card"></i><span>Checkout</span></a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartPage();
+      window.addEventListener('cart-updated', renderCartPage);
+      document.getElementById('clear-cart-btn').addEventListener('click', () => {
+        if (window.Cart.getCount() > 0 && confirm('Clear all items from your cart?')) window.Cart.clear();
+      });
+    });
+
+    function renderCartPage() {
+      const items = window.Cart.getItems();
+      const listContainer = document.getElementById('cart-items-list');
+      const emptyState = document.getElementById('empty-cart-state');
+      const checkoutBtn = document.getElementById('proceed-checkout-btn');
+      document.getElementById('cart-item-count-text').textContent = window.Cart.getCount();
+
+      if (!items.length) {
+        listContainer.innerHTML = '';
+        emptyState.style.display = 'flex';
+        checkoutBtn.classList.add('is-disabled');
+      } else {
+        emptyState.style.display = 'none';
+        checkoutBtn.classList.remove('is-disabled');
+        listContainer.innerHTML = items.map(item => `
+          <article class="simple-cart-item">
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="simple-cart-item-info">
+              <a href="product.html?id=${item.id}"><h3>${item.name}</h3></a>
+              <p>${item.brand} • ${item.category}</p>
+              <div class="simple-cart-qty">
+                <button onclick="window.Cart.updateQuantity(${item.id}, ${item.quantity - 1})" aria-label="Decrease quantity"><i class="fa-solid fa-minus"></i></button>
+                <span>${item.quantity}</span>
+                <button onclick="window.Cart.updateQuantity(${item.id}, ${item.quantity + 1})" aria-label="Increase quantity"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+            <div class="simple-cart-item-end">
+              <strong>${window.formatCurrency(item.price * item.quantity)}</strong>
+              <button onclick="window.Cart.removeItem(${item.id})" aria-label="Remove ${item.name}"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+          </article>`).join('');
+      }
+      const subtotal=window.Cart.getSubtotal(), shipping=window.Cart.getShipping(), tax=window.Cart.getTax(), total=window.Cart.getTotal();
+      document.getElementById('summary-subtotal').textContent=window.formatCurrency(subtotal);
+      document.getElementById('summary-shipping').textContent=shipping===0 ? (subtotal===0 ? 'AED 0' : 'FREE') : window.formatCurrency(shipping);
+      document.getElementById('summary-tax').textContent=window.formatCurrency(tax);
+      document.getElementById('summary-total').textContent=window.formatCurrency(total);
+    }
+  </script>
+</body>
+</html>

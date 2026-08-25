@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laptop Specifications — COUGAR</title>
+  <meta name="description" content="View full hardware specifications, real photography, and purchase options for HP & Dell laptops at COUGAR." />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Reference Matched Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Floating Social Sidebar -->
+  <aside class="floating-social-sidebar">
+    <a href="#" class="floating-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="floating-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="floating-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="#" class="floating-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+  </aside>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-square"><img src="assets/images/cougar-logo-source.png" alt="COUGAR logo" /></span>
+        <span>COUGAR</span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="products.html?brand=HP" class="nav-link">HP Laptops</a></li>
+        <li><a href="products.html?brand=Dell" class="nav-link">Dell Laptops</a></li>
+        
+        
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="nav-cart-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <a href="checkout.html" class="nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Order Now</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" id="product-detail-main">
+    <!-- Breadcrumb -->
+    <div style="margin: 20px 0 28px 0;" class="fade-left">
+      <div class="breadcrumb">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="products.html">Products</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span id="breadcrumb-laptop-name" style="color: var(--text-white); font-weight: 600;">Laptop Details</span>
+      </div>
+    </div>
+
+    <!-- Product Detail Two-Column Layout -->
+    <div class="product-detail-grid">
+      <!-- Left: Real Photo Gallery Box -->
+      <div class="product-detail-gallery fade-left">
+        <div style="border-radius: var(--radius-lg); overflow: hidden; max-height: 420px; display: flex; align-items: center; justify-content: center; background: #000000; border: 1px solid var(--glass-border);">
+          <img id="detail-img" src="" alt="Laptop Image" style="width: 100%; height: 380px; object-fit: cover;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px;">
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); padding: 12px; text-align: center;">
+            <i class="fa-solid fa-truck-fast" style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 4px;"></i>
+            <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Free 2-Day Courier</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); padding: 12px; text-align: center;">
+            <i class="fa-solid fa-shield-halved" style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 4px;"></i>
+            <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">2-Year Warranty</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); padding: 12px; text-align: center;">
+            <i class="fa-solid fa-rotate-left" style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 4px;"></i>
+            <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">30-Day Money-Back</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Product Info & Purchase Form -->
+      <div class="product-detail-info fade-right">
+        <div class="detail-brand-badge">
+          <span id="detail-brand-pill" class="card-brand-chip" style="position: static;">HP</span>
+          <span id="detail-category-pill" style="color: var(--text-muted); font-weight: 600; margin-left: 8px;">Business Series</span>
+        </div>
+
+        <h1 id="detail-title" class="detail-title">Loading Laptop Details...</h1>
+
+        <div class="card-rating" style="margin-bottom: 12px;">
+          <span id="detail-stars"></span>
+          <span id="detail-rating-text" style="font-weight: 800; color: var(--text-white); margin-left: 4px;">4.9</span>
+          <span id="detail-reviews-count" class="review-count">(124 verified reviews)</span>
+          <span style="margin-left: 12px; color: var(--accent-gold); font-size: 0.85rem; font-weight: 600;">
+            <i class="fa-solid fa-circle-check"></i> In Stock & Ready to Ship
+          </span>
+        </div>
+
+        <div class="detail-price-box">
+          <span id="detail-price" class="detail-current-price">$0</span>
+          <span id="detail-original-price" class="detail-original-price">$0</span>
+          <span id="detail-save-badge" class="detail-save-pill">Save $0</span>
+        </div>
+
+        <p id="detail-description" class="detail-desc">
+          High-performance notebook engineered with precision.
+        </p>
+
+        <!-- Quantity & Add to Cart -->
+        <div class="detail-quantity-row">
+          <label style="font-weight: 600; font-size: 0.92rem; color: var(--text-secondary);">Quantity:</label>
+          <div class="qty-stepper">
+            <button class="qty-btn" id="qty-minus"><i class="fa-solid fa-minus"></i></button>
+            <input type="number" id="qty-input" class="qty-input" value="1" min="1" max="10" readonly />
+            <button class="qty-btn" id="qty-plus"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 14px; margin-bottom: 32px; flex-wrap: wrap;">
+          <button id="add-to-cart-btn" class="btn btn-primary" style="flex: 1; padding: 14px 28px; font-size: 1rem;">
+            <i class="fa-solid fa-bag-shopping"></i> Add to Shopping Cart
+          </button>
+          <button id="buy-now-btn" class="btn btn-glass" style="flex: 1; padding: 14px 28px; font-size: 1rem;">
+            <i class="fa-solid fa-credit-card"></i> Buy Now
+          </button>
+        </div>
+
+        <!-- Highlights Checklist -->
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 18px;">
+          <h4 style="font-size: 0.92rem; font-weight: 700; margin-bottom: 10px; color: var(--text-white);">The COUGAR Standard:</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.86rem; color: var(--text-secondary);">
+            <li><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 6px;"></i> Brand New Sealed Box with Authentic Factory Accessories</li>
+            <li><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 6px;"></i> High-Wattage USB-C Fast Charging Power Supply</li>
+            <li><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 6px;"></i> Official 2-Year COUGAR Comprehensive Hardware Warranty</li>
+            <li><i class="fa-solid fa-check" style="color: var(--accent-gold); margin-right: 6px;"></i> Clean Factory Windows OS with No Bloatware</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Specifications Table -->
+    <div style="margin-bottom: 72px;" class="reveal-on-scroll">
+      <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px;">Technical Specifications</h2>
+      <table class="specs-table">
+        <tbody>
+          <tr>
+            <th>Processor (CPU)</th>
+            <td id="spec-processor">-</td>
+          </tr>
+          <tr>
+            <th>Memory (RAM)</th>
+            <td id="spec-ram">-</td>
+          </tr>
+          <tr>
+            <th>Storage Drive</th>
+            <td id="spec-storage">-</td>
+          </tr>
+          <tr>
+            <th>Display & Screen</th>
+            <td id="spec-display">-</td>
+          </tr>
+          <tr>
+            <th>Graphics (GPU)</th>
+            <td id="spec-gpu">-</td>
+          </tr>
+          <tr>
+            <th>Battery & Power</th>
+            <td id="spec-battery">-</td>
+          </tr>
+          <tr>
+            <th>Weight & Portability</th>
+            <td id="spec-weight">-</td>
+          </tr>
+          <tr>
+            <th>Operating System</th>
+            <td id="spec-os">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Similar Recommended Laptops -->
+    <div style="margin-bottom: 80px;" class="reveal-on-scroll">
+      <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.5px;">Similar HP & Dell Laptops</h2>
+      <div class="products-grid" id="related-products-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 16px;">
+            <span class="nav-logo-square"><img src="assets/images/cougar-logo-source.png" alt="COUGAR logo" /></span>
+            <span>COUGAR</span>
+          </div>
+          <p>The premier authorized digital destination for high-performance HP & Dell laptops. Engineered for greatness.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Laptops (32)</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Brands</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?brand=HP">HP Laptops (16)</a></li>
+            <li><a href="products.html?brand=Dell">Dell Laptops (16)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Assurance</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fa-solid fa-shield"></i> 2-Year Warranty</a></li>
+            <li><a href="#"><i class="fa-solid fa-lock"></i> Stripe Security</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2024 COUGAR Inc. All rights reserved.</div>
+        <div>HP & Dell Authorized Outlet</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let currentProduct = null;
+    let selectedQuantity = 1;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const productId = parseInt(params.get('id'), 10) || 1;
+
+      if (!window.PRODUCTS) return;
+      currentProduct = window.PRODUCTS.find(p => p.id === productId) || window.PRODUCTS[0];
+
+      populateProductDetails(currentProduct);
+      setupQuantityControls();
+      renderRelatedProducts(currentProduct);
+    });
+
+    function populateProductDetails(product) {
+      document.title = `${product.name} — COUGAR`;
+      document.getElementById('breadcrumb-laptop-name').textContent = product.name;
+      document.getElementById('detail-img').src = product.image;
+      document.getElementById('detail-img').alt = product.name;
+      document.getElementById('detail-title').textContent = product.name;
+      document.getElementById('detail-brand-pill').textContent = product.brand;
+      document.getElementById('detail-category-pill').textContent = `${product.category} Series`;
+
+      document.getElementById('detail-stars').innerHTML = window.renderStars(product.rating);
+      document.getElementById('detail-rating-text').textContent = product.rating;
+      document.getElementById('detail-reviews-count').textContent = `(${product.reviews} customer reviews)`;
+
+      document.getElementById('detail-price').textContent = window.formatCurrency(product.price);
+      document.getElementById('detail-original-price').textContent = window.formatCurrency(product.originalPrice);
+      const savings = product.originalPrice - product.price;
+      document.getElementById('detail-save-badge').textContent = `Save ${window.formatCurrency(savings)} (${Math.round((savings / product.originalPrice) * 100)}% OFF)`;
+
+      document.getElementById('detail-description').textContent = product.description;
+
+      document.getElementById('spec-processor').textContent = product.specs.processor;
+      document.getElementById('spec-ram').textContent = product.specs.ram;
+      document.getElementById('spec-storage').textContent = product.specs.storage;
+      document.getElementById('spec-display').textContent = product.specs.display;
+      document.getElementById('spec-gpu').textContent = product.specs.gpu;
+      document.getElementById('spec-battery').textContent = product.specs.battery;
+      document.getElementById('spec-weight').textContent = product.specs.weight;
+      document.getElementById('spec-os').textContent = product.specs.os;
+
+      document.getElementById('add-to-cart-btn').onclick = () => {
+        window.Cart.addItem(product, selectedQuantity);
+      };
+
+      document.getElementById('buy-now-btn').onclick = async (event) => {
+        window.Cart.addItem(product, selectedQuantity);
+        await window.startStripeCheckout(event);
+      };
+    }
+
+    function setupQuantityControls() {
+      const minusBtn = document.getElementById('qty-minus');
+      const plusBtn = document.getElementById('qty-plus');
+      const qtyInput = document.getElementById('qty-input');
+
+      minusBtn.addEventListener('click', () => {
+        if (selectedQuantity > 1) {
+          selectedQuantity--;
+          qtyInput.value = selectedQuantity;
+        }
+      });
+
+      plusBtn.addEventListener('click', () => {
+        if (selectedQuantity < 10) {
+          selectedQuantity++;
+          qtyInput.value = selectedQuantity;
+        }
+      });
+    }
+
+    function renderRelatedProducts(product) {
+      const related = window.PRODUCTS
+        .filter(p => p.id !== product.id && (p.brand === product.brand || p.category === product.category))
+        .slice(0, 3);
+
+      const container = document.getElementById('related-products-grid');
+      if (!container) return;
+
+      container.innerHTML = related.map((laptop, index) => `
+        <div class="product-card reveal-on-scroll delay-${index + 1}">
+          <div class="card-img-area">
+            <span class="card-brand-chip">${laptop.brand}</span>
+            <a href="product.html?id=${laptop.id}" style="width: 100%; height: 100%; display: block;">
+              <img src="${laptop.image}" alt="${laptop.name}" loading="lazy" />
+            </a>
+          </div>
+          <div class="card-content">
+            <div class="card-category">${laptop.category} &bull; ${laptop.brand}</div>
+            <a href="product.html?id=${laptop.id}">
+              <h3 class="card-title">${laptop.name}</h3>
+            </a>
+            <div class="card-rating">
+              ${window.renderStars(laptop.rating)}
+              <span class="review-count">(${laptop.reviews})</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-group">
+                <span class="card-price">${window.formatCurrency(laptop.price)}</span>
+              </div>
+              <a href="product.html?id=${laptop.id}" class="btn btn-glass btn-sm">
+                View Specs
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      if (window.initScrollAnimations) {
+        window.initScrollAnimations();
+      }
+    }
+  </script>
+</body>
+</html>
